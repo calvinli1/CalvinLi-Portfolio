@@ -9,41 +9,53 @@ import {
   Layers,
   Zap,
   Terminal,
-  Settings
+  Settings,
+  Cloud,
+  Database,
+  Wrench,
+  Activity
 } from 'lucide-react';
 
+// Kept in sync with public/assets/CalvinLiResume.pdf (Skills section)
 const skillCategories = [
   {
     title: 'Programming Languages',
     skills: [
-      { name: 'C/C++', icon: Code2, level: 95, color: '#1E90FF' },
       { name: 'Python', icon: Terminal, level: 90, color: '#39FF14' },
-      { name: 'Java', icon: Microchip, level: 92, color: '#1E90FF' },
-      { name: 'MATLAB', icon: Settings, level: 89, color: '#39FF14' },
-    ],
-  },
-  {
-    title: 'Hardware & Embedded',
-    skills: [
-      { name: 'Arduino', icon: Cpu, level: 95, color: '#39FF14' },
-      { name: 'Microcontroller', icon: Zap, level: 88, color: '#1E90FF' },
-      { name: 'Advanced Hardware', icon: Microchip, level: 85, color: '#39FF14' },
-    ],
-  },
-  {
-    title: 'Systems & Algorithms',
-    skills: [
+      { name: 'C/C++', icon: Code2, level: 95, color: '#1E90FF' },
+      { name: 'Java', icon: FileCode, level: 92, color: '#39FF14' },
+      { name: 'MATLAB', icon: Settings, level: 89, color: '#1E90FF' },
+      { name: 'Bash', icon: Terminal, level: 80, color: '#39FF14' },
       { name: 'Assembly', icon: Box, level: 85, color: '#1E90FF' },
-      { name: 'FPGA / Verilog', icon: Layers, level: 75, color: '#39FF14' },
-      { name: 'Data Structures & Logic', icon: Box, level: 60, color: '#1E90FF' },
     ],
   },
   {
-    title: 'Tools & Documentation',
+    title: 'Hardware',
     skills: [
-      { name: 'VSCode', icon: FileCode, level: 88, color: '#39FF14' },
+      { name: 'FPGA', icon: Layers, level: 75, color: '#1E90FF' },
+      { name: 'Verilog', icon: Microchip, level: 75, color: '#39FF14' },
+      { name: 'Circuit Analysis', icon: Activity, level: 85, color: '#1E90FF' },
+      { name: 'Arduino', icon: Cpu, level: 95, color: '#39FF14' },
+      { name: 'Soldering', icon: Zap, level: 85, color: '#1E90FF' },
+      { name: 'QtSpim', icon: Box, level: 80, color: '#39FF14' },
+    ],
+  },
+  {
+    title: 'Software & Platforms',
+    skills: [
+      { name: 'Salesforce', icon: Cloud, level: 80, color: '#39FF14' },
+      { name: 'Office 365', icon: FileCode, level: 90, color: '#1E90FF' },
+      { name: 'ServiceNow', icon: Wrench, level: 88, color: '#39FF14' },
       { name: 'Git/GitHub', icon: Code2, level: 92, color: '#1E90FF' },
-      { name: 'LaTeX', icon: Microchip, level: 78, color: '#39FF14' },
+      { name: 'Linux', icon: Terminal, level: 85, color: '#39FF14' },
+    ],
+  },
+  {
+    title: 'Data & AI/ML',
+    skills: [
+      { name: 'pandas', icon: Database, level: 80, color: '#1E90FF' },
+      { name: 'NumPy', icon: Layers, level: 80, color: '#39FF14' },
+      { name: 'Jupyter Notebook', icon: FileCode, level: 85, color: '#1E90FF' },
     ],
   },
 ];
@@ -145,7 +157,7 @@ export default function Skills() {
           {[
             { value: '7+', label: 'Projects Completed' },
             { value: '2+', label: 'Years Experience' },
-            { value: '8+', label: 'Technologies' },
+            { value: '20+', label: 'Technologies' },
             { value: '100%', label: 'Passion' },
           ].map((stat) => (
             <motion.div

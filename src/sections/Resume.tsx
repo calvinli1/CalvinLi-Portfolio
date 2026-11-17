@@ -3,6 +3,8 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Download, FileText, Eye, X } from 'lucide-react';
 import PdfViewer from '../components/PdfViewer';
 
+// Bump the version when CalvinLiResume.pdf changes so browsers don't serve a cached copy
+const RESUME_URL = './assets/CalvinLiResume.pdf?v=20261116';
 
 export default function Resume() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -48,7 +50,7 @@ export default function Resume() {
           <div className="glass rounded-2xl p-6 shadow-elevated-white">
             <div className="rounded-xl overflow-hidden mb-6 relative">
               {/* PDF rendered as canvas - fills container width */}
-              <PdfViewer file="./assets/CalvinLiResume.pdf" className="rounded-xl" />
+              <PdfViewer file={RESUME_URL} className="rounded-xl" />
             </div>
 
             <div className="flex gap-3">
@@ -62,7 +64,7 @@ export default function Resume() {
                 View Full Screen
               </motion.button>
               <motion.a
-                href="./assets/CalvinLiResume.pdf"
+                href={RESUME_URL}
                 download
                 className="flex items-center justify-center gap-2 px-4 py-4 border border-white/20 text-white rounded-xl hover:border-cyber-electric hover:text-cyber-electric transition-all"
                 whileHover={{ scale: 1.02 }}
@@ -146,7 +148,7 @@ export default function Resume() {
                 </div>
                 <div className="flex items-center gap-2">
                   <motion.a
-                    href="./assets/CalvinLiResume.pdf"
+                    href={RESUME_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 text-sm text-white bg-cyber-electric rounded-lg hover:shadow-glow transition-all flex items-center gap-2"
@@ -156,7 +158,7 @@ export default function Resume() {
                     Open in New Tab
                   </motion.a>
                   <motion.a
-                    href="./assets/CalvinLiResume.pdf"
+                    href={RESUME_URL}
                     download
                     className="px-3 py-1.5 text-sm text-white border border-white/20 rounded-lg hover:border-cyber-electric hover:text-cyber-electric transition-all flex items-center gap-2"
                     whileHover={{ scale: 1.02 }}
@@ -174,7 +176,7 @@ export default function Resume() {
               </div>
               <div className="flex-1 bg-gray-900">
                 <iframe
-                  src="./assets/CalvinLiResume.pdf#toolbar=0&view=FitH"
+                  src={`${RESUME_URL}#toolbar=0&view=FitH`}
                   className="w-full h-full border-0"
                   title="Calvin Li Resume"
                 />

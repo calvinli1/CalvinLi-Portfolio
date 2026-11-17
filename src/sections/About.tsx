@@ -130,7 +130,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <p className="text-white font-medium text-sm">Education</p>
-                                    <p className="text-gray-500 text-xs">B.S. Engineering — Boston University</p>
+                                    <p className="text-gray-500 text-xs">B.S. Computer Engineering — Boston University, May 2028</p>
                                 </div>
                             </motion.div>
 
